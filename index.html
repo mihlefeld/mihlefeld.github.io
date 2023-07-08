@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    <link href="./css/main.css" rel="stylesheet" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="header">
+        <img src="images/profile_pic.png" class="profile_pic box_shadow"/>
+        <p class="headline">Maltes Project Showcase</p>
+        <span class="profile_pic"></span>
+    </div>
+    <div class="project_list">
+        <div class="project">
+            <p style="font-weight: bold;">Towards Quality Aware Face Recognition</p>
+            <p style="font-weight: bold;">Python, Numpy, MatplotLib, LaTeX, PyTorch, Conda</p>
+            <p>Description: Bachelor thesis, using quality values from MagFace [citation] in the
+                Comparison function to improve recognition performance. In the graphic below we can see a modelled
+                face recognition scenario. We consider pairs of face images that either belong to the same person
+                (genuine pairs) or to different persons (imposter pairs). For each pair we compute the standard
+                comparison score (Cosine Similarity) and take the minimum of the two quality values. When plotting
+                the genuine and imposter distribution we can see that the ideal decision boundary follows a curve
+                because low-quality image pairs with a slightly below average comparison score are likely genuine
+                pairs. However, when thresholding on the standard comparison score, we can not make use of this
+                observation, for this reason we proposed the QMagFace comparison score.</p>
+
+            <img src="images/qmagface.png" class="qmagface_image"></div>
+        </div>
+    </div>
+</body>
+
+</html>
