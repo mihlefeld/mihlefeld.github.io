@@ -74,6 +74,7 @@ h3 {
   display: flex;
   height: fit-content;
   padding: 2em;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 2em;
 }
