@@ -11,15 +11,19 @@
 
 <body>
     <div class="header">
-        <img src="images/profile_pic.png" class="profile_pic box_shadow"/>
+        <img src="images/profile_pic.png" class="profile_pic box_shadow" />
         <p class="headline">Maltes Project Showcase</p>
         <span class="profile_pic"></span>
     </div>
     <div class="project_list">
         <div class="project">
-            <p style="font-weight: bold;">Towards Quality Aware Face Recognition</p>
-            <p style="font-weight: bold;">Python, Numpy, MatplotLib, LaTeX, PyTorch, Conda</p>
-            <p>Description: Bachelor thesis, using quality values from MagFace [citation] in the
+            <h3 class="bold">Towards Quality Aware Face Recognition <a
+                    href="https://github.com/pterhoer/QMagFace">[Code]</a></h3>
+            <p class="bold">Technologies: Python, Numpy, MatplotLib, LaTeX, PyTorch, Conda</p>
+            <p>
+                <span class="bold">Description:</span>
+                Bachelor thesis. Using quality values from
+                <a href="https://arxiv.org/abs/2103.06627">MagFace</a> in the
                 Comparison function to improve recognition performance. In the graphic below we can see a modelled
                 face recognition scenario. We consider pairs of face images that either belong to the same person
                 (genuine pairs) or to different persons (imposter pairs). For each pair we compute the standard
@@ -27,9 +31,23 @@
                 the genuine and imposter distribution we can see that the ideal decision boundary follows a curve
                 because low-quality image pairs with a slightly below average comparison score are likely genuine
                 pairs. However, when thresholding on the standard comparison score, we can not make use of this
-                observation, for this reason we proposed the QMagFace comparison score.</p>
-
-            <img src="images/qmagface.png" class="qmagface_image"></div>
+                observation, for this reason we proposed the QMagFace comparison score.
+            </p>
+            <img src="images/qmagface.png" class="project_span_image" />
+        </div>
+        <div class="project">
+            <h3 class="bold">MIMO Mask R-CNN <a href="https://github.com/DanailIordanov/MIMO-Mask-RCNN">[Code]</a></h3>
+            <p class="bold">Technologies: Python, PyTorch, Detectron2, LaTeX</p>
+            <p>
+                <span class="bold">Description:</span>
+                Havasi et al propose a new technique to train Deep Ensembles using just a single network.
+                We followed the approach of <a href="https://arxiv.org/abs/2111.13065">Cygert et al 2021</a> who applied
+                MIMO ensembling
+                to <a href="https://arxiv.org/abs/1506.01497">Faster R-CNN</a> and applied this ensembling technique to 
+                <a href="https://arxiv.org/abs/1703.06870">Mask R-CNN</a>. Unfortunately the results left a bit to be desired. 
+                The proposed network architecture can be seen here:
+            </p>
+            <img src="images/mask_rcnn_graphic.png" class="project_span_image" />
         </div>
     </div>
 </body>
