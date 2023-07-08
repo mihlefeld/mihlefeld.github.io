@@ -49,6 +49,22 @@
             </p>
             <img src="images/mask_rcnn_graphic.png" class="project_span_image" />
         </div>
+        <div class="project">
+            <h3 class="bold">Half Turn Reduction Solver<a href="https://github.com/mihlefeld/HTR">[Code]</a></h3>
+            <p class="bold">Technologies: C++, CMake, OpenMP, Julia</p>
+            <p>
+                <span class="bold">Description:</span>
+                Side project. For the speedcubing discipline "Fewest Moves Challenge" there is a solving technique called 
+                Domino Reduction explained in much detail by <a href="http://kociemba.org/cube.htm">Herbert Kociemba</a>,
+                it is the first step of the two-phase algorithm for solving a 3x3 Rubik's Cube. Because humans usually can't 
+                easily find a direct solution after Domino Reduction (DR), people started further reducing the subset to just 180°
+                turns [U2, D2, R2, L2, F2, B2]. This is called Half Turn Reduction (HTR), together with another friend we wanted 
+                to figure out "What is the distrubtion of optimal moves to achieve HTR when considering all possible starting DRs".
+                To answer this question we wrote a solver in Julia, and then ported it to C++, adding multi-threading to speed up 
+                the processing.
+            </p>
+            <img src="images/mask_rcnn_graphic.png" class="project_span_image" />
+        </div>
     </div>
 </body>
 
