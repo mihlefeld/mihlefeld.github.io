@@ -42,7 +42,7 @@
                 </h3>
                 <p class="bold">Technologies: Python, PyTorch, Detectron2, LaTeX</p>
                 <p>
-                    <span class="bold">Description:</span>
+                    <span class="bold">Description:</span> University Project.
                     Havasi et al propose a new technique to train Deep Ensembles using just a single network.
                     We followed the approach of <a href="https://arxiv.org/abs/2111.13065">Cygert et al 2021</a> who
                     applied
@@ -84,7 +84,7 @@
                 <img src="images/cube_explainer.svg" class="project_span_image" />
             </div>
             <div class="project">
-                <h3 class="bold">Dithered Color Quantization<a href="https://github.com/mihlefeld">[Code]</a></h3>
+                <h3 class="bold">Dithered Color Quantization <a href="https://github.com/mihlefeld">[Code]</a></h3>
                 <p class="bold">Technologies: C++, Python, Numpy, PyTorch, LibTorch, OpenMP, OpenCV</p>
                 <p>
                     <span class="bold">Description:</span>
@@ -122,6 +122,59 @@
                     fully solvable.
                 </p>
                 <img src="images/simpletafl.svg" class="project_span_image" />
+            </div>
+            <div class="project">
+                <h3 class="bold">Extra-P Perfomance Modelling <a href="github.com">[Code]</a></h3>
+                <p class="bold">Technologies: Cuda, C++, Python</p>
+                <p>
+                    <span class="bold">Description:</span> University project.
+                    The <a href="https://github.com/extra-p/extrap">Extra-P</a> project aims at making it easier to
+                    identify scaling bugs
+                    by modelling program performance as a multi-dimensional function of a number of parameters. Possible
+                    parameters could
+                    be anything related to problem size or the number of cores solving the problem. One option to find
+                    the closest
+                    match of a performance model is to try all combinations of parameter multiplication and addition and
+                    subsequently
+                    solving for the best coefficients. However, trying out all combinations grows exponentially as we
+                    increase the number of
+                    parameters. As part of this university project we took existing Python code implementing
+                    multi-parameter performance
+                    modelling and ported it to C++ with CUDA. Due to a minimal representation of the problem at hand and
+                    intensive
+                    performance optimization we were able to achieve a speedup of up to 100'000x depending on GPU model
+                    and the number
+                    of parameters.
+                </p>
+                <!-- <img src="images/simpletafl.svg" class="project_span_image" /> -->
+            </div>
+            <div class="project">
+                <h3 class="bold">Face Completion Demonstrator <a href="github.com">[Code]</a></h3>
+                <p class="bold">Technologies: Python, Numpy, Tensorflow, Qt</p>
+                <p>
+                    <span class="bold">Description:</span> University project.
+                    As part of their bachelor thesis another student implemented a Tensorflow model which can
+                    reconstruct maksed parts
+                    of a face. In this university project we implemented a program to interactively demonstrate the
+                    face-completion
+                    algorithm of the bachelor student. For the UI we used python Qt bindings.
+                </p>
+            </div>
+            <div class="project">
+                <h3 class="bold">Face Quality Demonstrator <a href="github.com">[Code]</a></h3>
+                <p class="bold">Technologies: Python, Numpy, Tensorflow, Qt, MxNet</p>
+                <p>
+                    <span class="bold">Description:</span> University project.
+                    Because we finished the "Face Completion Demonstrator" early we started a second project as part of
+                    the same university
+                    course. In this project we implemented a simple UI where a face detection system scans the current
+                    webcam feed and draws
+                    bounding boxes around each detected face. Additionally, a quality score is computed following
+                    <a href="https://arxiv.org/abs/2003.09373">Terhörst et al 2020</a> and visualized by coloring the
+                    boxes.
+                    It is then also possible to enroll new faces into the system and the demonstrator will recognize any
+                    enrolled person.
+                </p>
             </div>
         </div>
     </div>
