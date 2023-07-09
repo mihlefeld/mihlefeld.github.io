@@ -7,18 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet" />
     <title>Document</title>
-    <script>
-        function set_columns() {
-            var project_list = document.getElementById("project_list")
-            var w = window.innerWidth;
-            var first_project = document.getElementById("first_project");
-            var child_w = first_project.offsetWidth * 1.1;
-            var num = ~~(w / child_w);
-            console.log(w, child_w);
-            project_list.style.setProperty("--num_cols", num);
-        }
-        window.onresize = set_columns;
-    </script>
+    <script src="src/main.js"></script>
 </head>
 
 <body onresize="set_columns()" onload="set_columns()">
