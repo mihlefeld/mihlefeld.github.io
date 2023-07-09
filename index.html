@@ -7,104 +7,133 @@
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet">
     <link href="./css/main.css" rel="stylesheet" />
     <title>Document</title>
+    <script>
+        function set_columns() {
+            var project_list = document.getElementById("project_list")
+            var w = window.innerWidth;
+            var first_project = document.getElementById("first_project");
+            var child_w = first_project.offsetWidth * 1.1;
+            var num = ~~(w / child_w);
+            console.log(w, child_w);
+            project_list.style.setProperty("--num_cols", num);
+        }
+        window.onresize = set_columns;
+    </script>
 </head>
 
-<body>
+<body onresize="set_columns()" onload="set_columns()">
     <div class="header">
         <img src="images/profile_pic.png" class="profile_pic box_shadow" />
         <p class="headline">Malte's Project Showcase</p>
         <span class="profile_pic"></span>
     </div>
-    <div class="project_list">
-        <div class="project">
-            <h3 class="bold">Towards Quality Aware Face Recognition <a
-                    href="https://github.com/pterhoer/QMagFace">[Code]</a></h3>
-            <p class="bold">Technologies: Python, Numpy, MatplotLib, LaTeX, PyTorch, Conda</p>
-            <p>
-                <span class="bold">Description:</span>
-                Bachelor thesis. Using quality values from
-                <a href="https://arxiv.org/abs/2103.06627">MagFace</a> in the
-                Comparison function to improve recognition performance. In the graphic below we can see a modelled
-                face recognition scenario. We consider pairs of face images that either belong to the same person
-                (genuine pairs) or to different persons (imposter pairs). For each pair we compute the standard
-                comparison score (Cosine Similarity) and take the minimum of the two quality values. When plotting
-                the genuine and imposter distribution we can see that the ideal decision boundary follows a curve
-                because low-quality image pairs with a slightly below average comparison score are likely genuine
-                pairs. However, when thresholding on the standard comparison score, we can not make use of this
-                observation, for this reason we proposed the QMagFace comparison score.
-            </p>
-            <img src="images/qmagface.png" class="project_span_image" />
-        </div>
-        <div class="project">
-            <h3 class="bold">MIMO Mask R-CNN <a href="https://github.com/DanailIordanov/MIMO-Mask-RCNN">[Code]</a></h3>
-            <p class="bold">Technologies: Python, PyTorch, Detectron2, LaTeX</p>
-            <p>
-                <span class="bold">Description:</span>
-                Havasi et al propose a new technique to train Deep Ensembles using just a single network.
-                We followed the approach of <a href="https://arxiv.org/abs/2111.13065">Cygert et al 2021</a> who applied
-                MIMO ensembling
-                to <a href="https://arxiv.org/abs/1506.01497">Faster R-CNN</a> and applied this ensembling technique to
-                <a href="https://arxiv.org/abs/1703.06870">Mask R-CNN</a>. Unfortunately the results left a bit to be
-                desired.
-                The proposed network architecture can be seen here:
-            </p>
-            <img src="images/mask_rcnn_graphic.png" class="project_span_image" />
-        </div>
-        <div class="project">
-            <h3 class="bold">Half Turn Reduction Solver<a href="https://github.com/mihlefeld/HTR">[Code]</a></h3>
-            <p class="bold">Technologies: C++, CMake, OpenMP, Julia</p>
-            <p>
-                <span class="bold">Description:</span>
-                Side project. For the speedcubing discipline "Fewest Moves Challenge" there is a solving technique
-                called
-                Domino Reduction explained in much detail by <a href="http://kociemba.org/cube.htm">Herbert
-                    Kociemba</a>,
-                it is the first step of the two-phase algorithm for solving a 3x3 Rubik's Cube. Because humans usually
-                can't
-                easily find a direct solution after Domino Reduction (DR), people started further reducing the subset to
-                just 180°
-                turns [U2, D2, R2, L2, F2, B2]. This is called Half Turn Reduction (HTR), together with another friend
-                we wanted
-                to figure out "What is the distrubtion of optimal moves to achieve HTR when considering all possible
-                starting DRs".
-                To answer this question we wrote a solver in Julia, and then ported it to C++, adding multi-threading to
-                speed up
-                the processing.
-            </p>
-            <img src="images/cube_explainer.svg" class="project_span_image" />
-        </div>
-        <div class="project">
-            <h3 class="bold">Dithered Color Quantization<a href="https://github.com/mihlefeld">[Code]</a></h3>
-            <p class="bold">Technologies: C++, Python, Numpy, PyTorch, LibTorch, OpenMP, OpenCV</p>
-            <p>
-                <span class="bold">Description:</span>
-                University Project. GIF is a common file format to come across, especially on the web. However, to save
-                an image as
-                a GIF, one has to define a palette with a maximum number of 256 colors, no other colors can be used in
-                the image.
-                Because of this, there is usually a significant loss in quality when converting to GIF. To mitigate
-                this, we can
-                use color dithering. The most common technique for color dithering is the Floyd-Steinberg Dithering
-                algorithm.
-                In this University project I implemented and extended a modern version of the "Dithered Color
-                Quantization" paper by
-                Buhmann et al.
-            </p>
-            <img src="images/mandrill_comp.png" class="project_span_image" />
-        </div>
-        <div class="project">
-            <h3 class="bold">Simple Tafl Solver <a href="github.com">[Code]</a></h3>
-            <p class="bold">Technologies: Rust</p>
-            <p>
-                <span class="bold">Description:</span>
-                Side Project. A friend asked me a question about calculating a combinatorial value. After solving the
-                problem I joined in on his project by implementing a competing Simple Tafl solver. 
-                <a href="http://aagenielsen.dk/simple_hnefatafl_rules.php">Simple Tafl</a> is a version of the board
-                game <a href="https://de.wikipedia.org/wiki/Hnefatafl">Hnefatafl</a> with a simplified ruleset.
-                By additionally decreasing the board size, we hoped to decrease the complexity enough to make it 
-                fully solvable.
-            </p>
-            <img src="images/simpletafl.svg" class="project_span_image" />
+    <div class="center_child">
+        <div class="project_list" id="project_list">
+            <div class="project" id="first_project">
+                <h3 class="bold">Towards Quality Aware Face Recognition <a
+                        href="https://github.com/pterhoer/QMagFace">[Code]</a></h3>
+                <p class="bold">Technologies: Python, Numpy, MatplotLib, LaTeX, PyTorch, Conda</p>
+                <p>
+                    <span class="bold">Description:</span>
+                    Bachelor thesis. Using quality values from
+                    <a href="https://arxiv.org/abs/2103.06627">MagFace</a> in the
+                    Comparison function to improve recognition performance. In the graphic below we can see a modelled
+                    face recognition scenario. We consider pairs of face images that either belong to the same person
+                    (genuine pairs) or to different persons (imposter pairs). For each pair we compute the standard
+                    comparison score (Cosine Similarity) and take the minimum of the two quality values. When plotting
+                    the genuine and imposter distribution we can see that the ideal decision boundary follows a curve
+                    because low-quality image pairs with a slightly below average comparison score are likely genuine
+                    pairs. However, when thresholding on the standard comparison score, we can not make use of this
+                    observation, for this reason we proposed the QMagFace comparison score.
+                </p>
+                <img src="images/qmagface.png" class="project_span_image" />
+            </div>
+            <div class="project">
+                <h3 class="bold">MIMO Mask R-CNN <a href="https://github.com/DanailIordanov/MIMO-Mask-RCNN">[Code]</a>
+                </h3>
+                <p class="bold">Technologies: Python, PyTorch, Detectron2, LaTeX</p>
+                <p>
+                    <span class="bold">Description:</span>
+                    Havasi et al propose a new technique to train Deep Ensembles using just a single network.
+                    We followed the approach of <a href="https://arxiv.org/abs/2111.13065">Cygert et al 2021</a> who
+                    applied
+                    MIMO ensembling
+                    to <a href="https://arxiv.org/abs/1506.01497">Faster R-CNN</a> and applied this ensembling technique
+                    to
+                    <a href="https://arxiv.org/abs/1703.06870">Mask R-CNN</a>. Unfortunately the results left a bit to
+                    be
+                    desired.
+                    The proposed network architecture can be seen here:
+                </p>
+                <img src="images/mask_rcnn_graphic.png" class="project_span_image" />
+            </div>
+            <div class="project">
+                <h3 class="bold">Half Turn Reduction Solver<a href="https://github.com/mihlefeld/HTR">[Code]</a></h3>
+                <p class="bold">Technologies: C++, CMake, OpenMP, Julia</p>
+                <p>
+                    <span class="bold">Description:</span>
+                    Side project. For the speedcubing discipline "Fewest Moves Challenge" there is a solving technique
+                    called
+                    Domino Reduction explained in much detail by <a href="http://kociemba.org/cube.htm">Herbert
+                        Kociemba</a>,
+                    it is the first step of the two-phase algorithm for solving a 3x3 Rubik's Cube. Because humans
+                    usually
+                    can't
+                    easily find a direct solution after Domino Reduction (DR), people started further reducing the
+                    subset to
+                    just 180°
+                    turns [U2, D2, R2, L2, F2, B2]. This is called Half Turn Reduction (HTR), together with another
+                    friend
+                    we wanted
+                    to figure out "What is the distrubtion of optimal moves to achieve HTR when considering all possible
+                    starting DRs".
+                    To answer this question we wrote a solver in Julia, and then ported it to C++, adding
+                    multi-threading to
+                    speed up
+                    the processing.
+                </p>
+                <img src="images/cube_explainer.svg" class="project_span_image" />
+            </div>
+            <div class="project">
+                <h3 class="bold">Dithered Color Quantization<a href="https://github.com/mihlefeld">[Code]</a></h3>
+                <p class="bold">Technologies: C++, Python, Numpy, PyTorch, LibTorch, OpenMP, OpenCV</p>
+                <p>
+                    <span class="bold">Description:</span>
+                    University Project. GIF is a common file format to come across, especially on the web. However, to
+                    save
+                    an image as
+                    a GIF, one has to define a palette with a maximum number of 256 colors, no other colors can be used
+                    in
+                    the image.
+                    Because of this, there is usually a significant loss in quality when converting to GIF. To mitigate
+                    this, we can
+                    use color dithering. The most common technique for color dithering is the Floyd-Steinberg Dithering
+                    algorithm.
+                    In this University project I implemented and extended a modern version of the "Dithered Color
+                    Quantization" paper by
+                    Buhmann et al.
+                </p>
+                <div style="display: flex; justify-content: space-between;">
+                    <p class="bold">8 Color Quantization</p>
+                    <p class="bold">Original Image</p>
+                </div>
+                <img src="images/mandrill_comp.png" class="project_span_image" />
+            </div>
+            <div class="project">
+                <h3 class="bold">Simple Tafl Solver <a href="github.com">[Code]</a></h3>
+                <p class="bold">Technologies: Rust</p>
+                <p>
+                    <span class="bold">Description:</span>
+                    Side Project. A friend asked me a question about calculating a combinatorial value. After solving
+                    the
+                    problem I joined in on his project by implementing a competing Simple Tafl solver.
+                    <a href="http://aagenielsen.dk/simple_hnefatafl_rules.php">Simple Tafl</a> is a version of the board
+                    game <a href="https://de.wikipedia.org/wiki/Hnefatafl">Hnefatafl</a> with a simplified ruleset.
+                    By additionally decreasing the board size, we hoped to decrease the complexity enough to make it
+                    fully solvable.
+                </p>
+                <img src="images/simpletafl.svg" class="project_span_image" />
+            </div>
         </div>
     </div>
 </body>

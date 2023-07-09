@@ -70,6 +70,11 @@ h3 {
   box-shadow: 0em 0.25em 0.25em rgba(0, 0, 0, 0.25);
 }
 
+.center_child {
+  display: flex;
+  justify-content: center;
+}
+
 .project_list {
   /* display: flex;
   height: fit-content;
@@ -77,9 +82,10 @@ h3 {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2em; */
+  --num_cols: 1;
   margin-left: 2em;
   margin-right: 2em;
-  column-width: 30em;
+  columns: var(--num_cols);
 }
 
 .project {
