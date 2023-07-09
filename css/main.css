@@ -32,6 +32,18 @@ h3 {
   font-size: 1.2em;
 }
 
+a:link {
+  color: #ceaf00;
+}
+
+a:visited {
+  color: #a08800;
+}
+
+a:hover {
+  color: #887400;
+}
+
 
 .bold {
   font-weight: bold;
@@ -40,13 +52,36 @@ h3 {
 .header {
   height: 10em;
   background: rgba(73, 91, 158, 1);
-  opacity: 1;
   overflow: visible;
   display: flex;
   flex-direction: row;
   gap: 2em;
   padding: 1em;
 }
+
+.footer {
+  height: fit-content;
+  background: rgba(73, 91, 158, 1);
+  color: white;
+  display: flex;
+  justify-content: left;
+  text-align: left;
+  padding: 1em;
+}
+
+.footer a:link {
+  color: #FFD700;
+}
+
+.footer a:visited {
+  color: #bda000;
+}
+
+.footer a:hover {
+  color: #ffe760;
+}
+
+
 
 .headline {
   width: 100%;
@@ -72,6 +107,7 @@ h3 {
 
 .center_child {
   display: flex;
+  width: 100%;
   justify-content: center;
 }
 
@@ -93,7 +129,7 @@ h3 {
   margin: 1em;
   height: fit-content;
   overflow: hidden;
-  background: rgba(201, 212, 255, 1);
+  background: #CCD7FF;
   padding: 0.5em;
   opacity: 1;
   border-radius: 1em;
